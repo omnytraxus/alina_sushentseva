@@ -1,0 +1,17 @@
+$opacityActiveElement: 0.9;
+$opacityNotActiveElement: 0.5;
+$transition: 0.2s;
+
+$maxAboutWidth: 900px;
+$maxTabletWidth: 768px;
+$maxMobileWidth: 425px;
+
+%centerXY {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+%centerY {
+    display: flex;
+    align-items: center;
+}

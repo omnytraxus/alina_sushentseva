@@ -1,0 +1,138 @@
+.header {
+    &__wrapper {
+        height: 60px;
+        width: 100%;
+        @extend %centerY;
+
+        @include mobile {
+            background-color: white;
+            opacity: 0.85;
+            position: fixed;
+            z-index: 9;
+        }
+
+        .head_items {
+            width: 100%;
+            height: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+            @extend %centerY;
+
+            @include tablet {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            @include mobile {
+                padding-left: 10px;
+                padding-right: 0;
+            }
+
+            a {
+                text-decoration: none;
+                transition: $transition;
+            }
+
+            &__logo {
+                @include mobile {
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+            }
+
+            &__menu-button {
+                margin-left: auto;
+                height: 40px;
+                width: 40px;
+                @extend %centerXY;
+                display: none;
+                @include tablet {
+                    display: flex;
+                }
+
+                svg {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+
+            .hidden_menu_item {
+                @include tablet {
+                    display: none;
+                }
+            }
+
+            &__logo {
+                font-weight: 300;
+                font-size: 24px;
+                &:hover {
+                    opacity: $opacityNotActiveElement;
+                }
+            }
+
+            &__gallery {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.menu_item {
+    font-weight: 300;
+    font-size: 18px;
+    width: 100px;
+    opacity: $opacityNotActiveElement;
+    @extend %centerXY;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+        opacity: $opacityActiveElement;
+    }
+}
+
+.mobile_menu {
+    margin-bottom: 30px;
+}
+
+.active {
+    opacity: $opacityActiveElement;
+}
+
+.menu {
+    background-color: rgb(250, 250, 250);
+    position: fixed;
+    z-index: 99;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    transition: $transition;
+    transform: translateX(100%);
+    visibility: hidden;
+    @include tablet {
+        display: flex;
+    }
+
+    .menu-button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            margin-right: auto;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.active_menu {
+    transform: translateX(0);
+    visibility: visible;
+}

@@ -1,0 +1,15 @@
+@mixin about {
+  @media screen and (max-width: $maxAboutWidth) {
+      @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: $maxTabletWidth) {
+      @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: $maxMobileWidth) {
+      @content;
+  }
+}

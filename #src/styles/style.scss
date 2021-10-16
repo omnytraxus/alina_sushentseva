@@ -1,0 +1,49 @@
+@import 'commons/base.scss';
+@import 'commons/vars.scss';
+@import 'commons/mixins.scss';
+@import 'blocks/_header.scss';
+@import 'blocks/_gallery.scss';
+@import 'blocks/_video.scss';
+@import 'blocks/_about.scss';
+@import 'blocks/_contact.scss';
+
+.activePage {
+    display: block;
+}
+
+.fancybox__content {
+    max-width: 1200px;
+    padding: 0;
+    @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.is-close {
+    @include mobile {
+        display: none;
+    }
+}
+
+.is-selected {
+    @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.fancybox__html5video {
+    @include mobile {
+        height: auto;
+        width: 80%;
+    }
+}

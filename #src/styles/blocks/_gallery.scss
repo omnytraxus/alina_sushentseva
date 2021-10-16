@@ -1,0 +1,50 @@
+.gallery {
+    display: none;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    @include mobile {
+        width: auto;
+        height: auto;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+            margin-top: 60px;
+        }
+
+        .swiper-slide {
+            width: auto;
+            @extend %centerY;
+
+            @include mobile {
+                height: auto;
+                margin-bottom: 60px;
+            }
+    
+            div {
+                height: 90%;
+                width: auto;
+                overflow: hidden;
+                margin-left: 50px;
+                margin-right: 50px;
+                @extend %centerXY;
+    
+                @include mobile {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    height: auto;
+                }
+    
+                img {
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
